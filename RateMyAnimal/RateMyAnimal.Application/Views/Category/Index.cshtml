@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CategoryViewModel>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-md-auto">
+        <input asp-action="Create" type="submit" class="btn btn-primary btn-custom-color" value="New Category" onclick="location.href='@Url.Action("Create", "Category")'"/>
+        
+        @if (@ViewBag.Error != null)
+        {
+            <div class="col-md-12 col-md-auto mt-2">
+                <span class="text-danger">- @ViewBag.Error</span>
+            </div>
+        }
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Categories
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width=80%>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td width=20%>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

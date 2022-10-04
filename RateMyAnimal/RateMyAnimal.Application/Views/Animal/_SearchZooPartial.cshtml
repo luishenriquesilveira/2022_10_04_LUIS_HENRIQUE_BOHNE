@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Animal>
+
+@if (@Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Animals
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width=10%>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>
+                    <td width=60%>
+                        <img src="@string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(@item.Image))" class="animal-image-table" />
+                    </td>
+                    <td width=30%>
+                        <div>
+                            @foreach (var c in item.AnimalCategories)
+                            {
+                                <span class="category-card">@c.Category.Description</span>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="col-md-12 col-md-auto mt-2">
+        <span class="text-danger">- There are no records for this category.</span>
+    </div>
+}

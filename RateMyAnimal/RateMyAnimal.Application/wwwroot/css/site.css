@@ -1,0 +1,66 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custom-color-text {
+    --bs-text-opacity: 1;
+    color: #ffcea8 !important;
+}
+
+.animal-image {
+    width: 100%;
+    height: auto;
+}
+
+.animal-image-table {
+    width: auto;
+    height: 150px;
+}
+
+.dropDownMulti {
+    height: 250px;
+}
+
+.btn-custom-color {
+    background-color: #13383d !important;
+    color: #ffcea8 !important;
+    border-color: #13383d !important;
+}
+
+.category-card {
+    background-color: #13383d;
+    color: #ffcea8;
+    border: solid 5px;
+    font-size: 25px;
+    border-color: #ffcea8;
+    padding-inline: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.paw-icon {
+    width: auto;
+    height: 20px;
+    margin-right: 3px;
+}
+
+.paw-home {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}

@@ -1,0 +1,55 @@
+﻿@model AnimalViewModel
+
+@{
+    string image = string.Format("data:image/jpeg;base64,{0}", @Model.Image);
+    string action = ViewBag.ReturnTo == null ? "CreateAnimal" : "UpdateAnimal";
+}
+
+<div class="row justify-content-md-center">
+
+    <div class="col-md-12 col-md-auto">
+        <div class="row justify-content-md-center">
+            <div class="col-md-2 mb-2">
+                <input type="submit" class="btn btn-primary btn-custom-color" value="Skip Animal" onclick="location.href='@Url.Action("Index", "Animal")'"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5 col-md-auto">
+        <img src="@image" class="animal-image" />
+    </div>
+    <div class="col-md-6 col-md-auto">
+        <div class="col-md-6 col-md-auto">
+            <h2>Rate This Animal</h2>
+
+            <form asp-action="@action" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Date" />
+                <input type="hidden" asp-for="Image" />
+
+                <div class="form-group">
+                    <label asp-for="Categories" class="col-md-8 control-label fw-bold"></label>
+
+                    <select asp-for="Categories" class="form-control col-md-8 dropDownMulti" multiple="multiple">
+                        @foreach (CategoryViewModel c in ViewBag.Categories)
+                        {
+                            <option value="@c.Id">@c.Description</option>
+                        }
+                    </select>                    
+                    <span asp-validation-for="Categories" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 mt-3">
+                        <input type="submit" class="btn btn-primary btn-custom-color w-100" value="Evaluate"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

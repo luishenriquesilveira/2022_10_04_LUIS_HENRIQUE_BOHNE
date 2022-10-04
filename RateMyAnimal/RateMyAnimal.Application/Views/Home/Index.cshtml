@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Category>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-3">
+        <img src="~/images/paw.svg" class="paw-home" onclick="location.href='@Url.Action("Index", "Animal")'" />
+    </div>
+</div>
+
+@if (Model != null)
+{
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-md-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <b>TOP</b> Categories
+                        </th>
+                        <th>Uses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td width=80%>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td width=20%>
+                                @item.AnimalCategories.Count()
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

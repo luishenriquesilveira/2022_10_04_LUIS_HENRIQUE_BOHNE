@@ -17,12 +17,12 @@ Importar Collection no Postman: https://documenter.getpostman.com/view/17189346/
 
 # CONSIDERAÇÕES
 
-Deixei de fora algumas coisas que gostaria de implementar nesta solução devido as demandas em outros projetos.
-Escolhi desenvolver um WebApp para o desafio e com isso tive que voltar em algumas dicisões em função do tempo.
+Deixei de fora algumas coisas que gostaria de implementar nesta solução devido a demandas em outros projetos.
+Escolhi desenvolver um WebApp para o desafio e com isso tive que voltar em algumas decisões em função do tempo.
 Podemos entrar em detalhes sobre as decisões que deixei de fora em um próximo momento.
 
-Um ponto que gostaria de ter entrego era a parte dos testes.
+Um ponto que gostaria de ter entregue era a parte dos testes.
 Desenvolvi uma solução pouco tempo atrás com a mesma arquitetura, na parte do front utilizei react (primeira vez).
-Se possível, vou deixar o acesso liberado para este repositório onde implemento vários cenários de testes, com exeção de ponta a ponta para ser avaliado.
+Se possível avaliar, já vou deixar o acesso liberado para este outro repositório, onde implemento vários cenários de testes (unidade, serviço e integração).
 
 https://github.com/luishenriquesilveira/2022_09_POSTCODE_CHALLENGE
